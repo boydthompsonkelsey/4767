@@ -1,0 +1,19 @@
+@EndUserText.label : 'Employee'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table z7175employ {
+
+  key client      : abap.clnt not null;
+  key employee_id : z7175_employee_id not null;
+  first_name      : /dmo/first_name;
+  last_name       : /dmo/last_name;
+  birth_date      : z7175_birth_date;
+  entry_date      : z7175_entry_date;
+  @Semantics.amount.currencyCode : 'z7175employ.currency_code'
+  annual_salary   : z7175_annual_salary;
+  currency_code   : waers;
+  include /lrn/s_admin;
+
+}
